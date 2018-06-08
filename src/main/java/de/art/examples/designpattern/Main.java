@@ -1,7 +1,7 @@
 package de.art.examples.designpattern;
 
-import de.art.examples.designpattern.factory.JungleFactory;
-import de.art.examples.designpattern.factory.SavannaFactory;
+import de.art.examples.designpattern.factory.TigerFactory;
+import de.art.examples.designpattern.factory.ElephantFactory;
 
 /**
  * Created by redmann on 7/14/15.
@@ -9,9 +9,9 @@ import de.art.examples.designpattern.factory.SavannaFactory;
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Jungle");
-        new Client(new JungleFactory()).createEnvironment();
-        System.out.println("Savanna");
-        new Client(new SavannaFactory()).createEnvironment();
+        System.out.println("Tiger");
+        new Client(new TigerFactory()).createEnvironment();
+        System.out.println("Elephant");
+        new Client(new ElephantFactory()).createEnvironment();
     }
 }
