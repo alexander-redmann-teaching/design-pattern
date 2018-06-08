@@ -1,11 +1,22 @@
 package de.art.examples.designpattern;
 
-public class Tiger extends AnimalPrototype {
+public class Animal {
+    private static Animal instance;
     private String name;
     private String sound;
     private String color;
     private int limbs;
     private boolean isMammal;
+
+    private Animal() {
+    }
+
+    public static Animal getInstance() {
+        if (instance == null) {
+            instance = new Animal();
+        }
+        return instance;
+    }
 
     public String getName() {
         return name;
@@ -50,7 +61,7 @@ public class Tiger extends AnimalPrototype {
 
     @Override
     public String toString() {
-        return "Tiger{" +
+        return "Animal{" +
                 "name='" + name + '\'' +
                 ", sound='" + sound + '\'' +
                 ", color='" + color + '\'' +

@@ -6,16 +6,16 @@ package de.art.examples.designpattern;
 public class Main {
 
     public static void main(String[] args) throws CloneNotSupportedException {
-        final Tiger tiger = new Tiger();
+        final Animal tiger = Animal.getInstance();
         tiger.setColor("Orange");
         tiger.setLimbs(4);
         tiger.setSound("Roar");
         tiger.setMammal(true);
-        tiger.setName("Lilly");
+        tiger.setName("Tiger");
 
-        final Tiger clone = (Tiger) tiger.clone();
-        clone.setName("Khan");
-        System.out.println("Clone:\t" + clone);
-        System.out.println("Proto:\t" + tiger);
+        final Animal ape = Animal.getInstance();
+        ape.setName("Ape");
+        System.out.println("Ape: " + ape);
+        System.out.println("Tiger: " + tiger);
     }
 }
