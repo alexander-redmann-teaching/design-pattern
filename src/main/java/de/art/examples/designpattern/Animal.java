@@ -1,7 +1,10 @@
 package de.art.examples.designpattern;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Animal {
-    private static Animal instance;
+    private static Map<String, Animal> instanceMap = new HashMap<String, Animal>();
     private String name;
     private String sound;
     private String color;
@@ -11,9 +14,11 @@ public class Animal {
     private Animal() {
     }
 
-    public static Animal getInstance() {
+    public static Animal getInstance(String key) {
+        Animal instance = instanceMap.get(key);
         if (instance == null) {
             instance = new Animal();
+            instanceMap.put(key, instance);
         }
         return instance;
     }
