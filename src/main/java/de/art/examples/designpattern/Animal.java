@@ -1,27 +1,20 @@
 package de.art.examples.designpattern;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class Animal {
-    private static Map<String, Animal> instanceMap = new HashMap<String, Animal>();
     private String name;
     private String sound;
     private String color;
     private int limbs;
     private boolean isMammal;
 
-    private Animal() {
+    public Animal() {
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
-    public static Animal getInstance(String key) {
-        Animal instance = instanceMap.get(key);
-        if (instance == null) {
-            instance = new Animal();
-            instanceMap.put(key, instance);
-        }
-        return instance;
-    }
 
     public String getName() {
         return name;
