@@ -5,9 +5,17 @@ package de.art.examples.designpattern;
  */
 public class Main {
 
-    public static void main(String[] args) {
-        final AnimalBuilderInterface animalBuilder = new AnimalBuilderInterfaceImpl();
-        final AnimalBuildDirector animalBuildDirector = new AnimalBuildDirector(animalBuilder);
-        System.out.println(animalBuildDirector.construct());
+    public static void main(String[] args) throws CloneNotSupportedException {
+        final Tiger tiger = new Tiger();
+        tiger.setColor("Orange");
+        tiger.setLimbs(4);
+        tiger.setSound("Roar");
+        tiger.setMammal(true);
+        tiger.setName("Lilly");
+
+        final Tiger clone = (Tiger) tiger.clone();
+        clone.setName("Khan");
+        System.out.println("Clone:\t" + clone);
+        System.out.println("Proto:\t" + tiger);
     }
 }
