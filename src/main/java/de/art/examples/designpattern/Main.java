@@ -5,17 +5,19 @@ package de.art.examples.designpattern;
  */
 public class Main {
 
-    public static void main(String[] args) throws CloneNotSupportedException {
-        final Animal tiger = Animal.getInstance();
-        tiger.setColor("Orange");
-        tiger.setLimbs(4);
-        tiger.setSound("Roar");
-        tiger.setMammal(true);
-        tiger.setName("Tiger");
+    public static void main(String[] args) {
+        System.out.println("Eagle...");
+        final Eagle eagle = new Eagle();
+        eagle.fly();
+        eagle.makeSound();
 
-        final Animal ape = Animal.getInstance();
-        ape.setName("Ape");
-        System.out.println("Ape: " + ape);
-        System.out.println("Tiger: " + tiger);
+        System.out.println("\nToyDuck...");
+        final PlasticToyDuck plasticToyDuck = new PlasticToyDuck();
+        plasticToyDuck.squeak();
+
+        System.out.println("\nToyAdapter...");
+        final ToyAdapter toyAdapter = new ToyAdapter(plasticToyDuck);
+        toyAdapter.fly();
+        toyAdapter.makeSound();
     }
 }
