@@ -6,18 +6,14 @@ package de.art.examples.designpattern;
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Eagle...");
-        final Bird eagle = new Eagle();
-        eagle.fly();
-        eagle.makeSound();
+        Component component = new Container();
+        Component innerComponent = new Box();
 
-        System.out.println("\nToyDuck...");
-        final PlasticToyDuck plasticToyDuck = new PlasticToyDuck();
-        plasticToyDuck.squeak();
+        component.add(new Ellipse());
+        component.add(innerComponent);
 
-        System.out.println("\nToyAdapter...");
-        final Bird toyAdapter = new ToyAdapter(plasticToyDuck);
-        toyAdapter.fly();
-        toyAdapter.makeSound();
+        innerComponent.add(new Rectangle());
+
+        component.draw();
     }
 }
