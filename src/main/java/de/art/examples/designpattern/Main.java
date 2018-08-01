@@ -7,7 +7,7 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println("Eagle...");
-        final Eagle eagle = new Eagle();
+        final Bird eagle = new Eagle();
         eagle.fly();
         eagle.makeSound();
 
@@ -16,7 +16,7 @@ public class Main {
         plasticToyDuck.squeak();
 
         System.out.println("\nToyAdapter...");
-        final ToyAdapter toyAdapter = new ToyAdapter(plasticToyDuck);
+        final Bird toyAdapter = new ToyAdapter(plasticToyDuck);
         toyAdapter.fly();
         toyAdapter.makeSound();
     }
