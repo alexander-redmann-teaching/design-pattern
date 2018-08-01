@@ -6,18 +6,12 @@ package de.art.examples.designpattern;
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Eagle...");
-        final Bird eagle = new Eagle();
-        eagle.fly();
-        eagle.makeSound();
+        TV sony = new Sony();
+        ConcreteRemote concreteRemote = new ConcreteRemote(sony);
 
-        System.out.println("\nToyDuck...");
-        final PlasticToyDuck plasticToyDuck = new PlasticToyDuck();
-        plasticToyDuck.squeak();
-
-        System.out.println("\nToyAdapter...");
-        final Bird toyAdapter = new ToyAdapter(plasticToyDuck);
-        toyAdapter.fly();
-        toyAdapter.makeSound();
+        concreteRemote.on();
+        concreteRemote.setChannel(5);
+        concreteRemote.nextChannel();
+        concreteRemote.off();
     }
 }
