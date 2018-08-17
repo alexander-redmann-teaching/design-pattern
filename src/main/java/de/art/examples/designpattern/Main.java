@@ -6,14 +6,8 @@ package de.art.examples.designpattern;
 public class Main {
 
     public static void main(String[] args) {
-        Component component = new Container();
-        Component innerComponent = new Box();
+        Facade facade = new Facade();
 
-        component.add(new Ellipse());
-        component.add(innerComponent);
-
-        innerComponent.add(new Rectangle());
-
-        component.draw();
+        System.out.println(facade.getCrazyStuff1() + " " + facade.getCrazyStuff2());
     }
 }
