@@ -6,8 +6,13 @@ package de.art.examples.designpattern;
 public class Main {
 
     public static void main(String[] args) {
-        Facade facade = new Facade();
-
-        System.out.println(facade.getCrazyStuff1() + " " + facade.getCrazyStuff2());
+        Forest forest = new Forest();
+        for (int i = 0; i < 100; i++) {
+            forest.plantTree((int) (Math.random() * 500), (int) (Math.random() * 500),
+                    "Oak", "green", "Oak texture");
+            forest.plantTree((int) (Math.random() * 500), (int) (Math.random() * 500),
+                    "Maple", "red", "Maple texture");
+        }
+        forest.draw();
     }
 }
