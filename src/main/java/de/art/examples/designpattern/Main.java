@@ -26,9 +26,6 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        Expression isMale = getMaleExpression();
-        Expression isMarriedWoman = getMarriedWomanExpression();
-
         testSentence("Julie is a married women", getMarriedWomanExpression());
         testSentence("John is female", getMaleExpression());
         testSentence("Robert is male", getMaleExpression());
