@@ -7,16 +7,21 @@ public class Main {
 
 
     public static void main(String[] args) {
-        ChatMediator mediator = new ConcreteChatMediator();
-        User user1 = new ConcreteUser(mediator, "Alice");
-        User user2 = new ConcreteUser(mediator, "Bob");
-        User user3 = new ConcreteUser(mediator, "Carol");
-        User user4 = new ConcreteUser(mediator, "Dave");
-        mediator.addUser(user1);
-        mediator.addUser(user2);
-        mediator.addUser(user3);
-        mediator.addUser(user4);
-
-        user1.send("Hi All");
+        EditorOriginator editor = new EditorOriginator();
+        EditorCaretaker caretaker = new EditorCaretaker();
+        editor.setState("1");
+        caretaker.push(editor.save());
+        editor.setState("2");
+        editor.setState("3");
+        caretaker.push(editor.save());
+        editor.setState("4");
+        editor.print();
+        System.out.println("Undo");
+        editor.restoreToState(caretaker.pop());
+        editor.print();
+        editor.restoreToState(caretaker.pop());
+        editor.print();
+        editor.restoreToState(caretaker.pop());
+        editor.print();
     }
 }
