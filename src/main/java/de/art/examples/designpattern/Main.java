@@ -5,29 +5,18 @@ package de.art.examples.designpattern;
  */
 public class Main {
 
-    //Rule: Julie is a married women
-    public static Expression getMarriedWomanExpression() {
-        Expression julie = new TerminalExpression("Julie");
-        Expression married = new TerminalExpression("married");
-        return new AndExpression(julie, married);
-    }
-
-    //Rule: Robert and John are male
-    public static Expression getMaleExpression() {
-        Expression male = new TerminalExpression("male");
-        Expression robert = new TerminalExpression("Robert");
-        Expression john = new TerminalExpression("John");
-
-        return new OrExpression(new AndExpression(robert, male), new AndExpression(john, male));
-    }
-
-    private static void testSentence(String sentence, Expression expression) {
-        System.out.println(sentence + "? : " + expression.interpret(sentence.split(" ")));
-    }
 
     public static void main(String[] args) {
-        testSentence("Julie is a married women", getMarriedWomanExpression());
-        testSentence("John is female", getMaleExpression());
-        testSentence("Robert is male", getMaleExpression());
+        ChatMediator mediator = new ConcreteChatMediator();
+        User user1 = new ConcreteUser(mediator, "Alice");
+        User user2 = new ConcreteUser(mediator, "Bob");
+        User user3 = new ConcreteUser(mediator, "Carol");
+        User user4 = new ConcreteUser(mediator, "Dave");
+        mediator.addUser(user1);
+        mediator.addUser(user2);
+        mediator.addUser(user3);
+        mediator.addUser(user4);
+
+        user1.send("Hi All");
     }
 }
