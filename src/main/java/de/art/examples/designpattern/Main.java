@@ -7,21 +7,14 @@ public class Main {
 
 
     public static void main(String[] args) {
-        EditorOriginator editor = new EditorOriginator();
-        EditorCaretaker caretaker = new EditorCaretaker();
-        editor.setState("1");
-        caretaker.push(editor.save());
-        editor.setState("2");
-        editor.setState("3");
-        caretaker.push(editor.save());
-        editor.setState("4");
-        editor.print();
-        System.out.println("Undo");
-        editor.restoreToState(caretaker.pop());
-        editor.print();
-        editor.restoreToState(caretaker.pop());
-        editor.print();
-        editor.restoreToState(caretaker.pop());
-        editor.print();
+        Screen screen = new Screen();
+        Printer printer = new Printer();
+        DataStore dataStore = new DataStore();
+        dataStore.addObserver(screen);
+        dataStore.addObserver(printer);
+
+        dataStore.setData("Foo Bar");
+
+        dataStore.notifyObservers();
     }
 }
