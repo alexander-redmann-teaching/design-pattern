@@ -11,22 +11,11 @@ public class Main {
 
 
     public static void main(String[] args) {
-        CeilingFanPullChainClassic ceilingFan = new CeilingFanPullChainClassic();
-//        CeilingFanPullChainContext ceilingFan = new CeilingFanPullChainContext();
-        while (true) {
-            System.out.print("Press ENTER");
-            waitForEnter();
-            ceilingFan.pull();
-
-        }
+        CompressionContext ctx = new CompressionContext();
+        //we could assume context is already set by preferences
+        ctx.setCompressionStrategy(new ZipCompressionStrategy());
+        //get a list of files...
+        ctx.createArchive(new String[] {"a.txt", "b.jpg"});
     }
 
-    private static void waitForEnter() {
-        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-        try {
-            in.readLine();
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-    }
 }
