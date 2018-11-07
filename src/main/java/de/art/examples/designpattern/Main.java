@@ -1,5 +1,9 @@
 package de.art.examples.designpattern;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 /**
  * Created by redmann on 7/14/15.
  */
@@ -7,21 +11,22 @@ public class Main {
 
 
     public static void main(String[] args) {
-        EditorOriginator editor = new EditorOriginator();
-        EditorCaretaker caretaker = new EditorCaretaker();
-        editor.setState("1");
-        caretaker.push(editor.save());
-        editor.setState("2");
-        editor.setState("3");
-        caretaker.push(editor.save());
-        editor.setState("4");
-        editor.print();
-        System.out.println("Undo");
-        editor.restoreToState(caretaker.pop());
-        editor.print();
-        editor.restoreToState(caretaker.pop());
-        editor.print();
-        editor.restoreToState(caretaker.pop());
-        editor.print();
+        CeilingFanPullChainClassic ceilingFan = new CeilingFanPullChainClassic();
+//        CeilingFanPullChainContext ceilingFan = new CeilingFanPullChainContext();
+        while (true) {
+            System.out.print("Press ENTER");
+            waitForEnter();
+            ceilingFan.pull();
+
+        }
+    }
+
+    private static void waitForEnter() {
+        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+        try {
+            in.readLine();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
     }
 }
