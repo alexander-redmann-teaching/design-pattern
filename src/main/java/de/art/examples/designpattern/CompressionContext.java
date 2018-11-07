@@ -1,7 +1,5 @@
 package de.art.examples.designpattern;
 
-import java.util.List;
-
 public class CompressionContext {
     private CompressionStrategy strategy;
 
