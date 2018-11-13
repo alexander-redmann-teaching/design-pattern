@@ -1,7 +1,9 @@
 package de.art.examples.designpattern;
 
 public interface Visitor {
-    void visit(Book book);
-    void visit(DVD dvd);
+    void visit(Airplane airplane);
 
+    void visit(Taxi taxi);
+
+    void visit(Train train);
 }

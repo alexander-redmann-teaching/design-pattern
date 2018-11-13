@@ -7,16 +7,25 @@ public class Main {
 
 
     public static void main(String[] args) {
-        Element[] elements = {new Book(20, 1000), new Book(100, 500),
-                new DVD(25, 2), new DVD(5, 5)};
+        Element[] elements = {new Taxi(minToSeconds(10)), new Train(timeToSeconds(1050), timeToSeconds(1130), minToSeconds(5)),
+                new Airplane(timeToSeconds(1200), timeToSeconds(1400), minToSeconds(20), minToSeconds(5)), new Taxi(minToSeconds(15))};
 
-        ShopingCartVisitor shoppingCartVisitor = new ShopingCartVisitor();
+        TravelTimeVisitor visitor = new TravelTimeVisitor();
         for (Element element : elements) {
-            element.accept(shoppingCartVisitor);
+            element.accept(visitor);
         }
 
-        System.out.println("Total: " + shoppingCartVisitor.getTotalCost());
+        System.out.println("Total: " + visitor.getTravelTime());
+    }
 
+    private static long minToSeconds(long minute) {
+        return minute * 60;
+    }
+
+    private static long timeToSeconds(long time) {
+        long minutes = time % 100;
+        long hours = (long) (time / Math.pow(10, 2));
+        return minToSeconds(minutes) + minToSeconds(hours * 60);
     }
 
 }
