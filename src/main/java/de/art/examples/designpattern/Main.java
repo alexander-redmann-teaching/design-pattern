@@ -10,8 +10,8 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println("Tiger");
-        new Client(new TigerFactory()).createEnvironment();
+        new EnvironmentClient(new TigerFactory()).createEnvironment();
         System.out.println("Elephant");
-        new Client(new ElephantFactory()).createEnvironment();
+        new EnvironmentClient(new ElephantFactory()).createEnvironment();
     }
 }
