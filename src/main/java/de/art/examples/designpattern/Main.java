@@ -6,14 +6,14 @@ package de.art.examples.designpattern;
 public class Main {
 
     public static void main(String[] args) {
-        Component component = new Container();
-        Component innerComponent = new Box();
+        Decorator decorator = new ContainerDecorator();
+        Decorator innerDecorator = new Box();
 
-        component.add(new Ellipse());
-        component.add(innerComponent);
+        decorator.add(new Ellipse());
+        decorator.add(innerDecorator);
 
-        innerComponent.add(new Rectangle());
+        innerDecorator.add(new Rectangle());
 
-        component.draw();
+        decorator.draw();
     }
 }
