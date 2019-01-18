@@ -10,8 +10,10 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println("Jungle");
-        new Client(new JungleFactory()).createEnvironment();
+        Client client = new Client(new JungleFactory());
+        client.createEnvironment();
         System.out.println("Savanna");
-        new Client(new SavannaFactory()).createEnvironment();
+        client = new Client(new SavannaFactory());
+        client.createEnvironment();
     }
 }
