@@ -1,9 +1,9 @@
 package de.art.examples.designpattern;
 
-public class AnimalBuildDirector {
+public class AnimalDirector {
     private final AnimalBuilderInterface animalBuilderInterface;
 
-    public AnimalBuildDirector(AnimalBuilderInterface animalBuilderInterface) {
+    public AnimalDirector(AnimalBuilderInterface animalBuilderInterface) {
         this.animalBuilderInterface = animalBuilderInterface;
     }
 
