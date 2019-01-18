@@ -1,5 +1,6 @@
 package de.art.examples.designpattern;
 
+import de.art.examples.designpattern.factory.AbstractEnvironmentFactory;
 import de.art.examples.designpattern.factory.JungleFactory;
 import de.art.examples.designpattern.factory.SavannaFactory;
 
@@ -10,10 +11,13 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println("Jungle");
-        Client client = new Client(new JungleFactory());
+        AbstractEnvironmentFactory abstractEnvironmentFactory = new JungleFactory();
+        Client client = new Client(abstractEnvironmentFactory);
         client.createEnvironment();
+
         System.out.println("Savanna");
-        client = new Client(new SavannaFactory());
+        abstractEnvironmentFactory = new SavannaFactory();
+        client = new Client(abstractEnvironmentFactory);
         client.createEnvironment();
     }
 }
