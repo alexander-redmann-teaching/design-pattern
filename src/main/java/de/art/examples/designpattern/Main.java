@@ -27,9 +27,9 @@ public class Main {
         zooPool.pushAnimal(ape);
         System.out.println("Created Ape: " + ape + " " + (System.currentTimeMillis() - startTime));
 
-        Animal animal = zooPool.popAnimal();
-        System.out.println("Pop: " + animal + " " + (System.currentTimeMillis() - startTime));
-        zooPool.pushAnimal(animal);
+        Animal animal0 = zooPool.popAnimal();
+        System.out.println("Pop0: " + animal0 + " " + (System.currentTimeMillis() - startTime));
+        zooPool.pushAnimal(animal0);
         Animal animal1 = zooPool.popAnimal();
         Animal animal2 = zooPool.popAnimal();
         System.out.println("Pop1: " + animal1 + " " + (System.currentTimeMillis() - startTime));
