@@ -15,7 +15,7 @@ public class Main {
 
         final Tiger clone = (Tiger) tiger.clone();
         clone.setName("Khan");
-        System.out.println("Clone:\t" + clone);
         System.out.println("Proto:\t" + tiger);
+        System.out.println("Clone:\t" + clone);
     }
 }
