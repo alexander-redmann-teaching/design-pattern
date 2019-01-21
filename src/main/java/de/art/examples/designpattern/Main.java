@@ -6,6 +6,7 @@ package de.art.examples.designpattern;
 public class Main {
 
     public static void main(String[] args) throws CloneNotSupportedException {
+        long startTime = System.currentTimeMillis();
         System.out.println("Start");
         ZooPool zooPool = new ZooPool();
         final Animal tiger = new Animal();
@@ -15,7 +16,7 @@ public class Main {
         tiger.setSound("Roar");
         tiger.setMammal(true);
         zooPool.pushAnimal(tiger);
-        System.out.println("Created Tiger: " + tiger);
+        System.out.println("Created Tiger: " + tiger + " " + (System.currentTimeMillis() - startTime));
 
         final Animal ape = new Animal();
         ape.setName("Ape");
@@ -24,15 +25,15 @@ public class Main {
         ape.setSound("Uhuh");
         ape.setMammal(true);
         zooPool.pushAnimal(ape);
-        System.out.println("Created Ape: " + ape);
+        System.out.println("Created Ape: " + ape + " " + (System.currentTimeMillis() - startTime));
 
         Animal animal = zooPool.popAnimal();
-        System.out.println("Pop: "+animal);
+        System.out.println("Pop: " + animal + " " + (System.currentTimeMillis() - startTime));
         zooPool.pushAnimal(animal);
         Animal animal1 = zooPool.popAnimal();
         Animal animal2 = zooPool.popAnimal();
-        System.out.println("Pop1: "+animal1);
-        System.out.println("Pop2: "+animal2);
+        System.out.println("Pop1: " + animal1 + " " + (System.currentTimeMillis() - startTime));
+        System.out.println("Pop2: " + animal2 + " " + (System.currentTimeMillis() - startTime));
 
 //        Animal animal3 = zooPool.popAnimal();
     }
