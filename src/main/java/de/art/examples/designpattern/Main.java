@@ -27,6 +27,6 @@ public class Main {
         System.out.println("Pop1: " + getWorker1.doSomething() + " " + (System.currentTimeMillis() - startTime));
         System.out.println("Pop2: " + getWorker2.doSomething() + " " + (System.currentTimeMillis() - startTime));
 
-        Worker animal3 = workerPool.popWorker();
+//        Worker animal3 = workerPool.popWorker();
     }
 }
