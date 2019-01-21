@@ -8,33 +8,25 @@ public class Main {
     public static void main(String[] args) throws CloneNotSupportedException {
         long startTime = System.currentTimeMillis();
         System.out.println("Start");
-        ZooPool zooPool = new ZooPool();
-        final Animal tiger = new Animal();
-        tiger.setName("Tiger");
-        tiger.setColor("Orange");
-        tiger.setLimbs(4);
-        tiger.setSound("Roar");
-        tiger.setMammal(true);
-        zooPool.pushAnimal(tiger);
-        System.out.println("Created Tiger: " + tiger + " " + (System.currentTimeMillis() - startTime));
+        WorkerPool workerPool = new WorkerPool();
+        final Worker worker0 = new Worker();
+        worker0.setName("Worker 0");
+        workerPool.pushWorker(worker0);
+        System.out.println("Created worker0: " + worker0.getName() + " " + (System.currentTimeMillis() - startTime));
 
-        final Animal ape = new Animal();
-        ape.setName("Ape");
-        ape.setColor("brown");
-        ape.setLimbs(4);
-        ape.setSound("Uhuh");
-        ape.setMammal(true);
-        zooPool.pushAnimal(ape);
-        System.out.println("Created Ape: " + ape + " " + (System.currentTimeMillis() - startTime));
+        final Worker worker1 = new Worker();
+        worker1.setName("Worker 1");
+        workerPool.pushWorker(worker1);
+        System.out.println("Created worker1: " + worker1.getName() + " " + (System.currentTimeMillis() - startTime));
 
-        Animal animal0 = zooPool.popAnimal();
-        System.out.println("Pop0: " + animal0 + " " + (System.currentTimeMillis() - startTime));
-        zooPool.pushAnimal(animal0);
-        Animal animal1 = zooPool.popAnimal();
-        Animal animal2 = zooPool.popAnimal();
-        System.out.println("Pop1: " + animal1 + " " + (System.currentTimeMillis() - startTime));
-        System.out.println("Pop2: " + animal2 + " " + (System.currentTimeMillis() - startTime));
+        Worker getWorker0 = workerPool.popWorker();
+        System.out.println("Pop0: " + getWorker0.doSomething() + " " + (System.currentTimeMillis() - startTime));
+        workerPool.pushWorker(getWorker0);
+        Worker getWorker1 = workerPool.popWorker();
+        Worker getWorker2 = workerPool.popWorker();
+        System.out.println("Pop1: " + getWorker1.doSomething() + " " + (System.currentTimeMillis() - startTime));
+        System.out.println("Pop2: " + getWorker2.doSomething() + " " + (System.currentTimeMillis() - startTime));
 
-//        Animal animal3 = zooPool.popAnimal();
+        Worker animal3 = workerPool.popWorker();
     }
 }
