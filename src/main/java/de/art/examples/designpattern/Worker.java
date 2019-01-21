@@ -21,6 +21,6 @@ public class Worker {
     }
 
     public String doSomething() {
-        return name + "is working";
+        return name + " is working";
     }
 }
