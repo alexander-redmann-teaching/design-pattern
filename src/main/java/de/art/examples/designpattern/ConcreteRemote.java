@@ -7,6 +7,12 @@ public class ConcreteRemote extends RemoteControl {
         super(implementor);
     }
 
+    @Override
+    void setChannel(int channel) {
+        super.setChannel(channel);
+        currentChannel = channel;
+    }
+
     public void nextChannel() {
         currentChannel++;
         setChannel(currentChannel);
