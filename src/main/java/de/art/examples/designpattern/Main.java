@@ -6,8 +6,8 @@ package de.art.examples.designpattern;
 public class Main {
 
     public static void main(String[] args) {
-        TV sony = new Sony();
-        ConcreteRemote concreteRemote = new ConcreteRemote(sony);
+        TVImplementor sony = new SonyConcreteImplementor();
+        ConcreteRemoteRefinedAbstraction concreteRemote = new ConcreteRemoteRefinedAbstraction(sony);
 
         concreteRemote.on();
         concreteRemote.setChannel(5);

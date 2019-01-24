@@ -1,9 +1,9 @@
 package de.art.examples.designpattern;
 
-public abstract class RemoteControl {
-    private final TV implementor;
+public abstract class RemoteControlAbstraction {
+    private final TVImplementor implementor;
 
-    RemoteControl(TV implementor) {
+    RemoteControlAbstraction(TVImplementor implementor) {
         this.implementor = implementor;
     }
 

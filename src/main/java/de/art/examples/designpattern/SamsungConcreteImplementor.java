@@ -1,6 +1,6 @@
 package de.art.examples.designpattern;
 
-public class Samsung implements TV {
+public class SamsungConcreteImplementor implements TVImplementor {
     public void on() {
         System.out.println("Samsung specific on");
     }

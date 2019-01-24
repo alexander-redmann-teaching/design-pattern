@@ -1,6 +1,6 @@
 package de.art.examples.designpattern;
 
-public interface TV {
+public interface TVImplementor {
     void on();
 
     void off();

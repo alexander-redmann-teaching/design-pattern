@@ -1,9 +1,9 @@
 package de.art.examples.designpattern;
 
-public class ConcreteRemote extends RemoteControl {
+public class ConcreteRemoteRefinedAbstraction extends RemoteControlAbstraction {
     private int currentChannel;
 
-    protected ConcreteRemote(TV implementor) {
+    protected ConcreteRemoteRefinedAbstraction(TVImplementor implementor) {
         super(implementor);
     }
 

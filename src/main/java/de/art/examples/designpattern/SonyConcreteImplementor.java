@@ -1,6 +1,6 @@
 package de.art.examples.designpattern;
 
-public class Sony implements TV {
+public class SonyConcreteImplementor implements TVImplementor {
     public void on() {
         System.out.println("Sony specific on");
     }
