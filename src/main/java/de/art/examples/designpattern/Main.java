@@ -1,19 +1,23 @@
 package de.art.examples.designpattern;
 
+import de.art.examples.designpattern.base.Steak;
+import de.art.examples.designpattern.garnish.Noodles;
+import de.art.examples.designpattern.garnish.Salad;
+import de.art.examples.designpattern.garnish.Soup;
+
 /**
  * Created by redmann on 7/14/15.
  */
 public class Main {
 
     public static void main(String[] args) {
-        Decorator decorator = new ContainerDecorator();
-        Decorator innerDecorator = new Box();
+        Dish dish = new Salad(new Noodles(new Steak()));
+        dish.printDescription();
+        System.out.println(" for "+ dish.getPrice() +" €");
 
-        decorator.add(new Ellipse());
-        decorator.add(innerDecorator);
+        dish = new Soup(dish);
+        dish.printDescription();
+        System.out.println(" for "+ dish.getPrice() +" €");
 
-        innerDecorator.add(new Rectangle());
-
-        decorator.draw();
     }
 }
