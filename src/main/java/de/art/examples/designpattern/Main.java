@@ -13,6 +13,8 @@ public class Main {
         component.add(innerComponent);
 
         innerComponent.add(new Rectangle());
+        innerComponent.add(new Ellipse());
+        innerComponent.add(new Rectangle());
 
         component.draw();
     }
