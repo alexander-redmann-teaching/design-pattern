@@ -1,12 +1,12 @@
 package de.art.examples.designpattern.garnish;
 
-import de.art.examples.designpattern.Dish;
+import de.art.examples.designpattern.DishComponent;
 
-public abstract class GarnishDecorator implements Dish {
-    protected final Dish dish;
+public abstract class GarnishDecorator implements DishComponent {
+    protected final DishComponent dish;
 
 
-    protected GarnishDecorator(Dish dish) {
+    protected GarnishDecorator(DishComponent dish) {
         this.dish = dish;
     }
 }

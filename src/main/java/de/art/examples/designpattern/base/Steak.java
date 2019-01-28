@@ -1,8 +1,8 @@
 package de.art.examples.designpattern.base;
 
-import de.art.examples.designpattern.Dish;
+import de.art.examples.designpattern.DishComponent;
 
-public class Steak implements Dish {
+public class Steak implements DishComponent {
     public float getPrice() {
         return 12.99f;
     }

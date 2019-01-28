@@ -11,7 +11,7 @@ import de.art.examples.designpattern.garnish.Soup;
 public class Main {
 
     public static void main(String[] args) {
-        Dish dish = new Salad(new Noodles(new Steak()));
+        DishComponent dish = new Salad(new Noodles(new Steak()));
         dish.printDescription();
         System.out.println(" for "+ dish.getPrice() +" €");
 

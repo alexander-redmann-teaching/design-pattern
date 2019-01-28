@@ -1,6 +1,6 @@
 package de.art.examples.designpattern;
 
-public interface Dish {
+public interface DishComponent {
     float getPrice();
 
     void printDescription();

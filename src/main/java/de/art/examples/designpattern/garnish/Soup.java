@@ -1,9 +1,9 @@
 package de.art.examples.designpattern.garnish;
 
-import de.art.examples.designpattern.Dish;
+import de.art.examples.designpattern.DishComponent;
 
 public class Soup extends GarnishDecorator {
-    public Soup(Dish dish) {
+    public Soup(DishComponent dish) {
         super(dish);
     }
 
