@@ -1,5 +1,5 @@
 package de.art.examples.designpattern;
 
-public interface Graphics {
+public interface GraphicsComponent {
     void draw();
 }

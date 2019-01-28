@@ -6,8 +6,8 @@ package de.art.examples.designpattern;
 public class Main {
 
     public static void main(String[] args) {
-        Component component = new Container();
-        Component innerComponent = new Box();
+        ContainerComposite component = new ContainerComposite();
+        ContainerComposite innerComponent = new ContainerComposite();
 
         component.add(new Ellipse());
         component.add(innerComponent);
