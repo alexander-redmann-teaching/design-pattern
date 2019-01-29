@@ -12,12 +12,12 @@ public class ProxyImage implements Image {
     }
 
     public void displayImage() {
+        System.out.println("Log: " + displayCount);
         if (realImage == null) {
             realImage = new RealImage(url);
         }
 
         displayCount++;
         realImage.displayImage();
-        System.out.println("Log: " + displayCount);
     }
 }
