@@ -8,6 +8,6 @@ public class Main {
     public static void main(String[] args) {
         DialogFacade dialogFacade = new DialogFacade();
         boolean erase = dialogFacade.showPanel("Erase HDD?");
-
+        System.out.println("Result: " + erase);
     }
 }
