@@ -10,6 +10,7 @@ public class TreeFactory {
         TreeType result = treeTypeMap.get(name);
         if (result == null) {
             result = new TreeType(name, color, texture);
+            System.out.println("Create new tree: " + name);
             treeTypeMap.put(name, result);
         }
         return result;
