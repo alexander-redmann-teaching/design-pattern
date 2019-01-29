@@ -6,8 +6,8 @@ package de.art.examples.designpattern;
 public class Main {
 
     public static void main(String[] args) {
-        Facade facade = new Facade();
+        DialogFacade dialogFacade = new DialogFacade();
+        boolean erase = dialogFacade.showPanel("Erase HDD?");
 
-        System.out.println(facade.getCrazyStuff1() + " " + facade.getCrazyStuff2());
     }
 }
