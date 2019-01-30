@@ -7,7 +7,7 @@ public class BusinessMailHandler extends EmailHandler {
             //handle request (move to correct folder)
             System.out.println("Processed businessaddress: " + email.getFrom());
         } else {
-            prevHandler.handleRequest(email);
+            successor.handleRequest(email);
         }
     }
 }

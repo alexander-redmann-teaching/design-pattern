@@ -2,13 +2,13 @@ package de.art.examples.designpattern;
 
 public abstract class EmailHandler {
     //reference to the next handler in the chain
-    protected EmailHandler prevHandler;
+    protected EmailHandler successor;
 
     public void addHandler(EmailHandler handler) {
-        if (prevHandler == null) {
-            prevHandler = handler;
+        if (successor == null) {
+            successor = handler;
         } else {
-            prevHandler.addHandler(handler);
+            successor.addHandler(handler);
         }
     }
 

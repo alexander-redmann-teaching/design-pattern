@@ -7,7 +7,7 @@ public class GMailHandler extends EmailHandler {
             //handle request (move to correct folder)
             System.out.println("Processed gmail: " + email.getFrom());
         } else {
-            prevHandler.handleRequest(email);
+            successor.handleRequest(email);
         }
     }
 }

@@ -7,7 +7,7 @@ public class FreemailMailHandler extends EmailHandler {
             //handle request (move to correct folder)
             System.out.println("Processed freemail: " + email.getFrom());
         } else {
-            prevHandler.handleRequest(email);
+            successor.handleRequest(email);
         }
     }
 }
