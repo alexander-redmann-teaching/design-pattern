@@ -2,7 +2,6 @@ package de.art.examples.designpattern;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.sql.SQLOutput;
 
 /**
  * Created by redmann on 7/14/15.
