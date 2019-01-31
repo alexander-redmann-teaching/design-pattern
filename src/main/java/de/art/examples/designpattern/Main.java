@@ -5,7 +5,7 @@ package de.art.examples.designpattern;
  */
 public class Main {
     public static void main(String[] args) {
-        StockReceiver stockReceiver = new StockReceiver();
+        StockReceiver stockReceiver = new StockReceiver("ABC");
 
         OrderCommandInterface buyStockOrder = new BuyStockCommand(stockReceiver);
         OrderCommandInterface sellStockOrder = new SellStockCommand(stockReceiver);
@@ -13,8 +13,8 @@ public class Main {
         BrokerInvoker broker = new BrokerInvoker();
         System.out.println("Take orders");
         broker.takeOrder(buyStockOrder);
-        broker.takeOrder(sellStockOrder);
         broker.takeOrder(buyStockOrder);
+        broker.takeOrder(sellStockOrder);
         broker.takeOrder(buyStockOrder);
         System.out.println("Place orders");
         broker.placeOrders();
