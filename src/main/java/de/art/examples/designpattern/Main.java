@@ -9,12 +9,12 @@ public class Main {
     public static void main(String[] args) {
         EditorOriginator editor = new EditorOriginator();
         EditorCaretaker caretaker = new EditorCaretaker();
-        editor.setState("1");
+        editor.write("Hello");
         caretaker.push(editor.save());
-        editor.setState("2");
-        editor.setState("3");
+        editor.write("Hello World");
+        editor.write("Hello World!!!");
         caretaker.push(editor.save());
-        editor.setState("4");
+        editor.write("Foo Bar");
         editor.print();
         System.out.println("Undo");
         editor.restoreToState(caretaker.pop());

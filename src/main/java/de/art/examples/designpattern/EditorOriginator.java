@@ -3,21 +3,21 @@ package de.art.examples.designpattern;
 public class EditorOriginator {
 
     //state
-    public String editorContents;
+    public String editorContent;
 
-    public void setState(String contents) {
-        this.editorContents = contents;
+    public void write(String contents) {
+        this.editorContent = contents;
     }
 
     public EditorMemento save() {
-        return new EditorMemento(editorContents);
+        return new EditorMemento(editorContent);
     }
 
     public void restoreToState(EditorMemento memento) {
-        editorContents = memento.getSavedState();
+        editorContent = memento.getSavedState();
     }
 
     public void print() {
-        System.out.println("print: " + editorContents);
+        System.out.println("print: " + editorContent);
     }
 }

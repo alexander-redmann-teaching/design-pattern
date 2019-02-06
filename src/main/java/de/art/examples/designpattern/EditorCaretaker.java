@@ -3,7 +3,7 @@ package de.art.examples.designpattern;
 import java.util.Stack;
 
 public class EditorCaretaker {
-    Stack<EditorMemento> stack = new Stack<EditorMemento>();
+    private Stack<EditorMemento> stack = new Stack<EditorMemento>();
 
     public void push(EditorMemento memento) {
         stack.push(memento);
