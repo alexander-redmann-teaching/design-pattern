@@ -17,6 +17,6 @@ public class Main {
         mediator.addUser(user3);
         mediator.addUser(user4);
 
-        user1.send("Hi All");
+        user2.send("Hi All");
     }
 }
