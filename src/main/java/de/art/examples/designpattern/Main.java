@@ -8,7 +8,7 @@ import java.util.Iterator;
  */
 public class Main {
     public static void main(String[] args) {
-        Iterator it = getIterator();
+        Iterator<Object> it = getIterator();
 
         while (it.hasNext()) {
             Object next = it.next();
@@ -16,8 +16,8 @@ public class Main {
         }
     }
 
-    private static Iterator getIterator() {
-        ArrayList list = new ArrayList();
+    private static Iterator<Object> getIterator() {
+        ArrayList<Object> list = new ArrayList<Object>();
         list.add("Chaitanya");
         list.add("Steve");
         list.add("Jack");
