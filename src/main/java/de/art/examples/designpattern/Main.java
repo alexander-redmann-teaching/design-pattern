@@ -14,7 +14,8 @@ public class Main {
         dataStore.addObserver(printer);
 
         dataStore.setData("Foo Bar");
+        System.out.println("-------");
+        dataStore.setData("Hello World");
 
-        dataStore.notifyObservers();
     }
 }

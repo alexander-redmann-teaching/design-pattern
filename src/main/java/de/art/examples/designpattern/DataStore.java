@@ -12,5 +12,6 @@ public class DataStore extends Observable {
     public void setData(String data) {
         this.data = data;
         setChanged();
+        notifyObservers();
     }
 }
