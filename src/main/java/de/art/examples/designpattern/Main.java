@@ -16,7 +16,7 @@ public class Main {
         while (true) {
             System.out.print("Press ENTER");
             waitForEnter();
-            ceilingFan.pull();
+            ceilingFan.pullChain();
 
         }
     }

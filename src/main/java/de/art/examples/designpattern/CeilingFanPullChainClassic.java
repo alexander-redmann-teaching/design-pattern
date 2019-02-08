@@ -3,7 +3,7 @@ package de.art.examples.designpattern;
 public class CeilingFanPullChainClassic {
     private int currentState = 0;
 
-    public void pull() {
+    public void pullChain() {
         switch (currentState) {
             case 0:
                 currentState = 1;

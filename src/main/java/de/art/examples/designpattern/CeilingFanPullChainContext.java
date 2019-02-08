@@ -10,7 +10,7 @@ public class CeilingFanPullChainContext {
         currentState = s;
     }
 
-    public void pull() {
+    public void pullChain() {
         currentState.pull(this);
     }
 }
