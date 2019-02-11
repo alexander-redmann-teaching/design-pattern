@@ -1,7 +1,7 @@
 package de.art.examples.designpattern;
 
 public class RarCompressionStrategy implements CompressionStrategy {
-    public void compressFiles(String[] files) {
-        System.out.println("Compress " + files.length + " files in RAR archive");
+    public void compressFileIntoArchive(String file, String archive) {
+        System.out.println("Compress " + file + " file into RAR archive: " + archive);
     }
 }

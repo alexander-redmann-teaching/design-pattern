@@ -1,7 +1,7 @@
 package de.art.examples.designpattern;
 
 public class ZipCompressionStrategy implements CompressionStrategy {
-    public void compressFiles(String[] files) {
-        System.out.println("Compress " + files.length + " files in ZIP archive");
+    public void compressFileIntoArchive(String file, String archive) {
+        System.out.println("Compress " + file + " file into ZIP archive: " + archive);
     }
 }

@@ -9,7 +9,10 @@ public class CompressionContext {
     }
 
     //use the strategy
-    public void createArchive(String[] files) {
-        strategy.compressFiles(files);
+    public void createArchive(String[] files, String archiveName) {
+        System.out.println("Create archive: " + archiveName);
+        for (String file : files) {
+            strategy.compressFileIntoArchive(file, archiveName);
+        }
     }
 }
