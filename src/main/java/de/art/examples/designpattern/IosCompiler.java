@@ -5,6 +5,11 @@ public class IosCompiler extends CrossCompiler {
         System.out.println("Collect IOS sources");
     }
 
+    @Override
+    protected void scanSources() {
+        System.out.println("Scan IOS sources");
+    }
+
     protected void compileToTarget() {
         System.out.println("Compile IOS sources");
     }
