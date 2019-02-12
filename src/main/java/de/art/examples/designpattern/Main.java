@@ -7,15 +7,19 @@ public class Main {
 
 
     public static void main(String[] args) {
-        Element[] elements = {new Taxi(minToSeconds(10)), new Train(timeToSeconds(1050), timeToSeconds(1130), minToSeconds(5)),
-                new Airplane(timeToSeconds(1200), timeToSeconds(1400), minToSeconds(20), minToSeconds(5)), new Taxi(minToSeconds(15))};
+        Taxi taxiFromHomeToTrainStation = new Taxi(minToSeconds(10));
+        Train trainToAirport = new Train(timeToSeconds(1050), timeToSeconds(1130), minToSeconds(5));
+        Airplane airplane = new Airplane(timeToSeconds(1200), timeToSeconds(1400), minToSeconds(20), minToSeconds(5));
+        Taxi taxiFromAirportToHotel = new Taxi(minToSeconds(15));
+
+        Element[] elements = {taxiFromHomeToTrainStation, trainToAirport, airplane, taxiFromAirportToHotel};
 
         TravelTimeVisitor visitor = new TravelTimeVisitor();
         for (Element element : elements) {
             element.accept(visitor);
         }
 
-        System.out.println("Total: " + visitor.getTravelTime());
+        System.out.println("Total travel time in minutes: " + visitor.getTravelTime());
     }
 
     private static long minToSeconds(long minute) {
