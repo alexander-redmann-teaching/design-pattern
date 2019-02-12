@@ -7,17 +7,16 @@ public class Main {
 
 
     public static void main(String[] args) {
-        Shape[] node = {new Circle(), new Circle(), new Rectangle()};
-        draw(node);
+        Node rootNode = new Node(new Shape[]{new NullShape(), new NullShape(), new NullShape()});
+        rootNode.draw();
         System.out.println("----");
-        node[1] = new NullShape();
-        draw(node);
-    }
-
-    private static void draw(Shape[] node) {
-        for (Shape shape : node) {
-            shape.draw();
-        }
+        rootNode.getShapeList()[0] = new Circle();
+        rootNode.getShapeList()[2] = new Rectangle();
+        rootNode.draw();
+        System.out.println("----");
+        Node subNode = new Node(new Shape[]{new Rectangle(), new Circle(), new Rectangle()});
+        rootNode.getShapeList()[1] = subNode;
+        rootNode.draw();
     }
 
 
