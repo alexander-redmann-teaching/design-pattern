@@ -5,7 +5,7 @@ package de.art.examples.designpattern;
  */
 public class Main {
 
-    public static void main(String[] args) throws CloneNotSupportedException {
+    public static void main(String[] args) {
         long startTime = System.currentTimeMillis();
         System.out.println("Start");
         WorkerPool workerPool = new WorkerPool();
