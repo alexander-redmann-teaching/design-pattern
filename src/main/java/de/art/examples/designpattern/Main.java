@@ -5,7 +5,7 @@ package de.art.examples.designpattern;
  */
 public class Main {
 
-    public static void main(String[] args) throws CloneNotSupportedException {
+    public static void main(String[] args) {
         final Animal tiger = Animal.getInstance("tiger");
         tiger.setName("Tiger");
         tiger.setColor("Orange");
