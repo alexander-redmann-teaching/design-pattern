@@ -1,13 +1,13 @@
 package de.art.examples.designpattern;
 
 public class BuyStockCommand implements OrderCommandInterface {
-    private StockReceiver abcStockReceiver;
+    private StockReceiver stockReceiver;
 
-    public BuyStockCommand(StockReceiver abcStockReceiver) {
-        this.abcStockReceiver = abcStockReceiver;
+    public BuyStockCommand(StockReceiver stockReceiver) {
+        this.stockReceiver = stockReceiver;
     }
 
     public void execute() {
-        abcStockReceiver.buy(1);
+        stockReceiver.buy(1);
     }
 }
